@@ -1,5 +1,6 @@
-# k-nearest-neighbors
- 
-    Implementing machine learning algorithm K-Nearest Neighbors using python
+# Machine Learning Algorithmns From Scratch
 
-    K-Nearest Neighbors is a classification algorithmn that essentially uses a majority rule framework to classify new data points. It takes the majority type of the K nearest points to determine the new point. 
+This is a project that I am putting on myself to fully understand the math and logic behind many popular machine learning algorithms. I believe there is no better way to truly understand something than to be able to implement it from the basics. Therefore the workflow will look like this: 
+ - Read online about theory, math, and logic
+ - Implement it using libraryless python
+ - Create testers to validate implementation
