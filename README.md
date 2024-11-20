@@ -4,3 +4,8 @@ This is a project that I am putting on myself to fully understand the math and l
  - Read online about theory, math, and logic
  - Implement it using libraryless python
  - Create testers to validate implementation
+
+## Algorithms
+- K Nearest Neighbors
+- Linear Regression
+- 
