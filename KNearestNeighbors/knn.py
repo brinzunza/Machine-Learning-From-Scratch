@@ -1,39 +1,43 @@
-'''
-- Supervised learning classification algorithm
-- logic
-    - from an existing dataset with points (x, y), find the distances(euclidean, manhattan, minkowski distance) of the new point against all other points in dataset
-    - find the closest k points (k being a predefined integer)
-    - classify new point based on the majority class of those k nearest points
-
-- Euclidean Distance is being used in this implementation being: Assume two points (x1, y1) and (x2, y2) ED = sqrt((x2 - x1)^2 + (y2 - y1)^2)
-- K has to be carefully chosen based on the dataset. 
-    - Choose odd number to avoid ties
-    - High value of k if a lot of outliers or noise exists
-    - Cross validation can be used to find most effective value of k
-- Sorting method used is bubble sort(although it is not the most efficient sorting algorithm)
-'''
-
 class KNN:
-    def __init__():
-        points = {}
+    def __init__(self):
+        self.points = {}
 
+    def addPoint(self, point, label):
+        self.points[point] = label
+
+    @staticmethod
     def euclidean(point1, point2):
         return ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2)**0.5
-
-    def newPoint(point, k):
-        distances = []
-        for i in points.keys:
-            distances.append([euclidean(point, i), i])
-        sorted_distances = sort(distances)
-        class_ranking = {}
-        for i in range(k):
-            
-
-
-    def sort(distances):
+    
+    @staticmethod
+    def sort_distances(distances):
         for i in range(len(distances)):
             for j in range(len(distances) - 1 - i):
-                if(distances[j] > distances[j + 1]):
+                if(distances[j][0] > distances[j + 1][0]):
                     temp = distances[j + 1]
                     distances[j + 1] = distances[j]
                     distances[j] = temp
+        return distances
+
+    def classify(self, point, k=3):
+        distances = []
+        for known_point, label in self.points.items():
+            distances.append((KNN.euclidean(point, known_point), label))
+        sorted_distances = KNN.sort_distances(distances)
+        labels = [label for _, label in distances[:k]]
+
+        label_counts = {}
+        for label in labels:
+            if label in label_counts:
+                label_counts[label] += 1
+            else:
+                label_counts[label] = 1
+
+        max_count = 0
+        most_common = None
+        for label, count in label_counts.items():
+            if count > max_count:
+                max_count = count
+                most_common = label
+
+        return most_common

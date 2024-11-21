@@ -1,0 +1,17 @@
+K Nearest Neighbors
+
+- Supervised learning classification algorithm
+- logic
+    - from an existing dataset with points (x, y), find the distances(euclidean, manhattan, minkowski distance) of the new point against all other points in dataset
+    - find the closest k points (k being a predefined integer)
+    - classify new point based on the majority class of those k nearest points
+
+- Euclidean Distance is being used in this implementation being: Assume two points (x1, y1) and (x2, y2) ED = sqrt((x2 - x1)^2 + (y2 - y1)^2)
+- K has to be carefully chosen based on the dataset. 
+    - Choose odd number to avoid ties
+    - High value of k if a lot of outliers or noise exists
+    - Cross validation can be used to find most effective value of k
+- Sorting method used is bubble sort(although it is not the most efficient sorting algorithm)
+- Disadvantages of KNN
+    - Requires a lot of computing power, especially with larger datasets
+    - Requires a lot of storage, especially with larger datasets
