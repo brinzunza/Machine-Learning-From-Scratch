@@ -46,7 +46,7 @@ def test_knn(x, y):
             plt.scatter(point[0], point[1], color='green', label=label)
 
     plt.scatter(test_point[0], test_point[1], color='red', marker='x', s=100, label='Test Point')
-    plt.title("KNN Classification")
+    plt.title("KNN Classification: Predicted Label = " + predicted_label)
     plt.xlabel('X-Axis')
     plt.ylabel('Y-Axis')
     plt.legend()

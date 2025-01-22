@@ -5,11 +5,9 @@ class KNN:
     def addPoint(self, point, label):
         self.points[point] = label
 
-    @staticmethod
     def euclidean(point1, point2):
         return ((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2)**0.5
     
-    @staticmethod
     def sort_distances(distances):
         for i in range(len(distances)):
             for j in range(len(distances) - 1 - i):
