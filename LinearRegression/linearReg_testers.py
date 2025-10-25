@@ -1,10 +1,28 @@
 from LinearRegression import LinearRegression
+import matplotlib.pyplot as plt
 
 def main(a):
     LR = LinearRegression(a)
     LR.find_slope()
     LR.find_intercept()
     return f"Form: y = {LR.slope}x + {LR.intercept}"
+
+def plot(a):
+    LR = LinearRegression(a)
+    LR.find_slope()
+    LR.find_intercept()
+
+    y_pred = [LR.slope * x + LR.intercept for x in LR.a]
+
+    plt.figure(figsize=(10, 6))
+    plt.scatter(LR.a, LR.b, color='blue', label='Data points', alpha=0.6)
+    plt.plot(LR.a, y_pred, color='red', linewidth=2, label=f'y = {LR.slope:.4f}x + {LR.intercept:.4f}')
+    plt.xlabel('X')
+    plt.ylabel('y')
+    plt.title('Linear Regression')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.show()
 
 
 
@@ -212,3 +230,6 @@ b = [
 ]
 
 print(main(a))
+#print(main(b))
+plot(a)
+#plot(b)
