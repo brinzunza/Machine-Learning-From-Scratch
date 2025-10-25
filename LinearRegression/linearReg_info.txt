@@ -1,13 +1,13 @@
 Linear Regression
 
-- Supervised Machine-Learning Algorithm that copmutes linear relationship between the dependent variable and one or more independent variables.
-    - Learns from labelled data
+- Supervised Machine-Learning Algorithm that computes a linear relationship between the dependent variable and one or more independent variables.
+- Learns from labelled data
 - Classification model for discrete or categorical data
 - Regression model that can output continuous variables
 
 Goal of Linear Regression:
 - Find best fit line, implying that the error between the predicted the predicted and actual values is kept to a minimum.
-- Best fit line will have the last error
+- Best fit line will have the least error
 
 Aspects
 - Hypothesis function: y = a + bx
